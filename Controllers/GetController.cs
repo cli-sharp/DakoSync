@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿namespace DakoSync.Controllers;
+
+using DakoSync.Models;
+using Microsoft.AspNetCore.Mvc;
 
 public class AccountsController : Controller
 {
