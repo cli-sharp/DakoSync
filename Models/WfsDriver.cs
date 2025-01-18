@@ -24,9 +24,5 @@ public record WfsDriver
 
     public string? LocationCountry { get; set; }
 
-    public string? PhoneBusiness { get; set; }
-
-    public string? PhoneMobile { get; set; }
-
-    public string? PhonePersonal { get; set; }
+    public string? Phone { get; set; }
 }
