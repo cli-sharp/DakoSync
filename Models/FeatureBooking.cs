@@ -2,7 +2,7 @@
 
 public record FeatureBooking
 {
-    public required string ObjectUid { get; set; }
+    public required string WfsObjectUid { get; set; }
 
     public FeatureType? FeatureType { get; set; }
 
