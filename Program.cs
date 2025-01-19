@@ -1,4 +1,6 @@
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
@@ -21,10 +23,22 @@ public class OperationFilter : IOperationFilter
 {
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
-        operation.Responses.Add("400", new OpenApiResponse() { Description = "Model invalid" });
         operation.Responses.Add("401", new OpenApiResponse() { Description = "Unauthorized" });
-        operation.Responses.Add("404", new OpenApiResponse() { Description = "UID not found" });
-        operation.Responses.Add("409", new OpenApiResponse() { Description = "UID already exists" });
-        operation.Responses.Add("500", new OpenApiResponse() { Description = "Internal server error" });
+        operation.Responses.Add("500", new OpenApiResponse() { Description = "Internal server error", Content = new Dictionary<string, OpenApiMediaType>()
+                {
+                    ["application/json"] = new OpenApiMediaType
+                    {
+                        Schema = context.SchemaGenerator.GenerateSchema(typeof(string), context.SchemaRepository),
+                    },
+                }});
+
+        var method = context.MethodInfo.GetCustomAttributes(true).OfType<HttpMethodAttribute>().Single();
+        if (method is HttpDeleteAttribute)
+        {
+            operation.Responses.Add("404", new OpenApiResponse()
+            {
+                Description = "UID not found",
+            });
+        }
     }
 }
