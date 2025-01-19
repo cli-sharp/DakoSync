@@ -2,8 +2,6 @@
 
 public record WfsObjectContract
 {
-    public required string ObjectUid { get; set; }
-
     public required string ContractNo { get; set; }
 
     public string? ContractBeginDate { get; set; }
@@ -29,4 +27,6 @@ public record WfsObjectContract
     public string? PndType { get; set; }
 
     public string? SimIccid { get; set; }
+
+    public required string ObjectUid { get; set; }
 }

@@ -4,8 +4,6 @@ public record WfsObject
 {
     public required string Uid { get; set; }
 
-    public bool? Active { get; set; }
-
     public string? ObjectName { get; set; }
 
     public string? ObjectNumber { get; set; }

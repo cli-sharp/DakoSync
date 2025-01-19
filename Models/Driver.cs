@@ -1,10 +1,8 @@
 ﻿namespace DakoSync.Models;
 
-public record WfsDriver
+public record Driver
 {
     public required string Uid { get; set; }
-
-    public bool? Active { get; set; }
 
     public string? Name { get; set; }
 

@@ -4,10 +4,6 @@ public record Account
 {
     public required string Uid { get; set; }
 
-    public bool? Active { get; set; }
-
-    public bool? Blocked { get; set; }
-
     public string? AccountName { get; set; }
 
     public string? CustomerName { get; set; }
