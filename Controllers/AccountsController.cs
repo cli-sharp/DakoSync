@@ -11,8 +11,8 @@ public class AccountsController : Controller
         return Ok();
     }
 
-    [HttpPut("accounts")]
-    public ActionResult<Account> CreateOrUpdateAccount([FromBody] Account account)
+    [HttpPost("accounts")]
+    public ActionResult<Account> CreateAccount([FromBody] Account account)
     {
         return Created();
     }
@@ -21,6 +21,12 @@ public class AccountsController : Controller
      public ActionResult<Account> ReadAccount(string accountUid)
     {
         return Ok();
+    }
+
+    [HttpPut("accounts/{accountUid}")]
+    public ActionResult<Account> UpdateAccount(string accountUid, [FromBody] Account account)
+    {
+        return Created();
     }
 
     [HttpDelete("accounts/{accountUid}")]

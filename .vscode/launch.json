@@ -23,8 +23,8 @@
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
-            "sourceFileMap": {
-                "/Views": "${workspaceFolder}/Views"
+            "logging": {
+                "moduleLoad": false
             }
         },
         {

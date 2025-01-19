@@ -11,8 +11,8 @@ public class WfsDriversController : Controller
         return Ok();
     }
 
-    [HttpPut("accounts/{accountUid}/wfsDrivers")]
-    public ActionResult<WfsDriver> CreateOrUpdateWfsDriver(string accountUid, [FromBody] WfsDriver wfsDriver)
+    [HttpPost("accounts/{accountUid}/wfsDrivers")]
+    public ActionResult<WfsDriver> CreateWfsDriver(string accountUid, [FromBody] WfsDriver wfsDriver)
     {
         return Created();
     }
@@ -21,6 +21,13 @@ public class WfsDriversController : Controller
     public ActionResult<Account> ReadWfsDriver(string accountUid, string driverUid)
     {
         return Ok();
+    }
+
+    [HttpPut("accounts/{accountUid}/wfsDrivers/{driverUid}")]
+    public ActionResult<WfsDriver> UpdateWfsDriver(
+        string accountUid, string driverUid, [FromBody] WfsDriver wfsDriver)
+    {
+        return Created();
     }
 
     [HttpDelete("accounts/{accountUid}/wfsDrivers/{driverUid}")]

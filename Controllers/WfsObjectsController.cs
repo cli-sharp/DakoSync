@@ -11,8 +11,8 @@ public class WfsObjectsController : Controller
         return Ok();
     }
 
-    [HttpPut("accounts/{accountUid}/wfsObjects")]
-    public ActionResult<WfsObject> CreateOrUpdateWfsObject(string accountUid, [FromBody] WfsObject wfsObject)
+    [HttpPost("accounts/{accountUid}/wfsObjects")]
+    public ActionResult<WfsObject> CreateWfsObject(string accountUid, [FromBody] WfsObject wfsObject)
     {
         return Created();
     }
@@ -21,6 +21,13 @@ public class WfsObjectsController : Controller
     public ActionResult<Account> ReadWfsObject(string accountUid, string objectUid)
     {
         return Ok();
+    }
+
+    [HttpPut("accounts/{accountUid}/wfsObjects/{ObjectUid}")]
+    public ActionResult<WfsObject> UpdateWfsObject(
+        string accountUid, string objectUid, [FromBody] WfsObject wfsObject)
+    {
+        return Created();
     }
 
     [HttpDelete("accounts/{accountUid}/wfsObjects/{ObjectUid}")]

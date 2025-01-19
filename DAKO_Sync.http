@@ -1,6 +1,0 @@
-@DAKO_Sync_HostAddress = http://localhost:5270
-
-GET {{DAKO_Sync_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
