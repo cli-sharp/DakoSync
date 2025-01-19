@@ -1,6 +1,6 @@
 ﻿namespace DakoSync.Models;
 
-public record FeatureBooking
+public record WfsObjectFeatureBooking
 {
     // ObjectUID
     public required string WfsObjectUid { get; set; }
