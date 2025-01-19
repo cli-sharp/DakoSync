@@ -18,7 +18,7 @@ public class WfsDriversController : Controller
     }
 
     [HttpGet("accounts/{accountUid}/wfsDrivers/{driverUid}")]
-    public ActionResult<Account> ReadWfsDriver(string accountUid, string driverUid)
+    public ActionResult<WfsDriver> ReadWfsDriver(string accountUid, string driverUid)
     {
         return Ok();
     }

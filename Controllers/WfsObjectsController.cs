@@ -18,7 +18,7 @@ public class WfsObjectsController : Controller
     }
 
     [HttpGet("accounts/{accountUid}/wfsObjects/{ObjectUid}")]
-    public ActionResult<Account> ReadWfsObject(string accountUid, string objectUid)
+    public ActionResult<WfsObject> ReadWfsObject(string accountUid, string objectUid)
     {
         return Ok();
     }
