@@ -18,5 +18,5 @@ public record Account
 
     public string? CustomerEmail { get; set; }
 
-    public string? CompanyCardIccId { get; set; }
+    public string[]? CompanyCardIccIds { get; set; }
 }
