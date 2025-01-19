@@ -6,14 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 public class AccountsController : Controller
 {
     [HttpGet("accounts")]
-    public ActionResult<IEnumerable<Account>> GetAccounts()
+    public ActionResult<IEnumerable<string>> ReadAccounts()
     {
-        return null;
+        return Ok();
     }
 
-    [HttpGet("accounts/{accountuid}")]
-     public ActionResult<Account> GetAccount(string accountuid)
+    [HttpPut("accounts")]
+    public ActionResult<Account> CreateOrUpdateAccount([FromBody] Account account)
     {
-        return null;
+        return Created();
+    }
+
+    [HttpGet("accounts/{accountUid}")]
+     public ActionResult<Account> ReadAccount(string accountUid)
+    {
+        return Ok();
+    }
+
+    [HttpDelete("accounts/{accountUid}")]
+     public ActionResult DeleteAccount(string accountUid)
+    {
+        return NoContent();
     }
 }

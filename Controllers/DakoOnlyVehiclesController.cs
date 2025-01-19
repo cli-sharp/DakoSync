@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 public class DakoOnlyVehiclesController : Controller
 {
-    [HttpGet("accounts/{accountuid}/dakoonlyvehicles")]
-    public ActionResult<IEnumerable<DakoOnlyVehicle>> GetDakoOnlyVehicles(string accountuid)
+    [HttpGet("accounts/{accountUid}/dakoOnlyVehicles")]
+    public ActionResult<IEnumerable<DakoOnlyVehicle>> GetDakoOnlyVehicles(string accountUid)
     {
-        return null;
+        return Ok();
     }
 }

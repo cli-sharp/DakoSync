@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 public class DakoOnlyDriversController : Controller
 {
-    [HttpGet("accounts/{accountuid}/dakoonlydrivers")]
-    public ActionResult<IEnumerable<DakoOnlyDriver>> GetDakoOnlyDrivers(string accountuid)
+    [HttpGet("accounts/{accountUid}/dakoOnlyDrivers")]
+    public ActionResult<IEnumerable<DakoOnlyDriver>> GetDakoOnlyDrivers(string accountUid)
     {
-        return null;
+        return Ok();
     }
 }
