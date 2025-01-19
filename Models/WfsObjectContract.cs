@@ -26,7 +26,7 @@ public record WfsObjectContract
 
     public string? PndType { get; set; }
 
-    public string? SimIccid { get; set; }
+    public string? SimIccId { get; set; }
 
     public required string ObjectUid { get; set; }
 }
