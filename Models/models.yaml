@@ -1,0 +1,225 @@
+components:
+  schemas:
+    #ACCOUNT MODEL
+    Account:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the account.
+        accountName:
+          type: string
+          description: Name of the account.
+        customerName:
+          type: string
+          description: Full name of the customer associated with the account.
+        customerState:
+          type: string
+          description: State where the customer resides.
+        customerZip:
+          type: string
+          description: Zip code of the customer's address.
+        customerCity:
+          type: string
+          description: City where the customer resides.
+        customerStreet:
+          type: string
+          description: Street address of the customer.
+        customerEmail:
+          type: string
+          description: Email address of the customer.
+          format: email
+        companyCardIccId:
+          type: string
+          description: ICCID of the company's card associated with the account.
+      required:
+        - uid
+    #ACCOUNT USER MODE
+    AccountUser:
+      type: object
+      properties:
+        email:
+          type: string
+          description: Email address of the user.
+          format: email
+        realName:
+          type: string
+          description: Full name of the user.
+      required:
+        - email
+        - realName
+    #OBJECT MODEL
+    Object:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the object.
+        objectName:
+          type: string
+          description: Name of the object.
+        objectNumber:
+          type: string
+          description: Unique number associated with the object.
+        licensePlate:
+          type: string
+          description: License plate of the object.
+        vin:
+          type: string
+          description: Vehicle Identification Number (VIN).
+        description:
+          type: string
+          description: Description of the object.
+        tachographType:
+          type: string
+          description: Type of tachograph installed in the vehicle.
+          enum:
+            - STR
+            - DTCO
+            - STAC
+            - EFAS
+            - unknown
+          example: DTCO
+      required:
+        - uid
+    #OBJECT CONTRACT MODEL
+    ObjectContract:
+      type: object
+      properties:
+        contractNo:
+          type: string
+          description: Contract number.
+        contractBeginDate:
+          type: string
+          description: Start date of the contract.
+          format: date
+        contractEndDate:
+          type: string
+          description: End date of the contract.
+          format: date
+        contractTariffName:
+          type: string
+          description: Name of the contract tariff.
+        contractObuSerialno:
+          type: string
+          description: Serial number of the OBU (On-Board Unit).
+        contractObuOsversion:
+          type: string
+          description: Operating system version of the OBU.
+        contractObuAppversion:
+          type: string
+          description: Application version of the OBU.
+        contractObuType:
+          type: string
+          description: Type of OBU.
+        pndMapversion:
+          type: string
+          description: Map version for the PND (Portable Navigation Device).
+        pndNcversion:
+          type: string
+          description: NC version for the PND.
+        pndSerialno:
+          type: string
+          description: Serial number of the PND.
+        pndType:
+          type: string
+          description: Type of PND.
+        simIccid:
+          type: string
+          description: SIM ICCID associated with the contract.
+        objectUid:
+          type: string
+          description: Unique identifier of the associated object.
+      required:
+        - contractNo
+        - objectUid
+    #FEATURE BOOKING MODEL
+    FeatureBooking:
+      type: object
+      properties:
+        featureType:
+          type: string
+          description: Type of feature being booked.
+          enum:
+            - BASIC
+            - PLUS
+          example: BASIC
+        featureActivationDate:
+          type: string
+          description: The date when the feature becomes active.
+          format: date
+        featureTerminationDate:
+          type: string
+          description: The date when the feature is terminated.
+          format: date
+        objectUid:
+          type: string
+          description: Unique identifier of the associated object.
+      required:
+        - objectUid
+    #DRIVER MODEL
+    Driver:
+      type: object
+      properties:
+        uid:
+          type: string
+          description: Unique identifier for the driver.
+        name:
+          type: string
+          description: Full name of the driver.
+        driverCardNumber:
+          type: string
+          description: Driver's card number.
+        driverCardCountryCode:
+          type: string
+          description: Country code of the driver's card.
+        driverCardValidUntil:
+          type: string
+          description: Expiration date of the driver's card.
+          format: date
+        driverLicenseNumber:
+          type: string
+          description: Driver's license number.
+        locationStreet:
+          type: string
+          description: Street address of the driver.
+        locationCity:
+          type: string
+          description: City where the driver resides.
+        locationPostcode:
+          type: string
+          description: Postcode of the driver's location.
+        locationCountry:
+          type: string
+          description: Country where the driver resides.
+        phoneBusiness:
+          type: string
+          description: Business phone number of the driver.
+        phoneMobile:
+          type: string
+          description: Mobile phone number of the driver.
+        phonePersonal:
+          type: string
+          description: Personal phone number of the driver.
+      required:
+        - uid
+    #ERROR MODEL
+    Error:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          description: The error code.
+        debugInfo:
+          type: array
+          items:
+            type: string
+            description: A list of optional debugging information. The contents of this attribute are not part of the API.
+    ExampleResponse:
+      type: object
+      description: an example JSON object
+      required:
+        - message
+      properties:
+        message:
+          type: string
