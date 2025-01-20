@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 public class WfsObjectFeatureBookingController : Controller
 {
     [HttpPost("accounts/{accountUid}/wfsObjects/{objectUid}/featureBooking")]
+    [ProducesResponseType(typeof(WfsObjectFeatureBooking), 201)]
     public ActionResult<WfsObjectFeatureBooking> CreateWfsObjectFeatureBooking(
         string accountUid, string objectUid, [FromBody] WfsObjectFeatureBooking wfsObject)
     {
@@ -13,6 +14,7 @@ public class WfsObjectFeatureBookingController : Controller
     }
 
     [HttpGet("accounts/{accountUid}/wfsObjects/{objectUid}/featureBooking")]
+    [ProducesResponseType(typeof(WfsObjectFeatureBooking), 200)]
     public ActionResult<WfsObjectFeatureBooking> ReadWfsObjectFeatureBooking(
         string accountUid, string objectUid)
     {
@@ -20,13 +22,15 @@ public class WfsObjectFeatureBookingController : Controller
     }
 
     [HttpPut("accounts/{accountUid}/wfsObjects/{objectUid}/featureBooking")]
+    [ProducesResponseType(typeof(WfsObjectFeatureBooking), 200)]
     public ActionResult<WfsObjectFeatureBooking> UpdateWfsObjectFeatureBooking(
         string accountUid, string objectUid, [FromBody] WfsObjectFeatureBooking wfsObject)
     {
-        return Created();
+        return Ok();
     }
 
     [HttpDelete("accounts/{accountUid}/wfsObjects/{objectUid}/featureBooking")]
+    [ProducesResponseType(204)]
      public ActionResult DeleteWfsObjectFeatureBooking(string accountUid, string objectUid)
     {
         return NoContent();
