@@ -18,5 +18,9 @@ public record Account
 
     public string? CustomerEmail { get; set; }
 
-    public string[]? CompanyCardIccIds { get; set; }
+    public string[]? CompanyCardIccIds { get; internal set; }
+
+    public bool Active { get; internal set; }
+
+    public bool Blocked { get; internal set; }
 }

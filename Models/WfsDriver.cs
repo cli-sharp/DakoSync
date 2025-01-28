@@ -37,4 +37,6 @@ public record WfsDriver
 
     // Phone
     public string? Phone { get; set; }
+
+    public bool Active { get; internal set; }
 }

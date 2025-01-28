@@ -37,7 +37,4 @@ public record WfsObjectContract
 
     // PndType
     public string? PndType { get; set; }
-
-    // SimIccId
-    public string? SimIccId { get; set; }
 }

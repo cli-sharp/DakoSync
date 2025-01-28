@@ -5,4 +5,6 @@ public record DakoOnlyVehicle
     public required string Vin { get; set; }
 
     public required bool Active { get; set; }
+
+    public required bool RemoteDownload { get; set; }
 }

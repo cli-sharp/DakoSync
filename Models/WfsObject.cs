@@ -20,15 +20,7 @@ public record WfsObject
     // Description
     public string? Description { get; set; }
 
-    // ! Only in MasterDB
-    public TachographType? TachographType { get; set; }
-}
+    public bool Active { get; internal set; }
 
-public enum TachographType
-{
-    STR,
-    DTCO,
-    STAC,
-    EFAS,
-    Unknown,
+    public bool RemoteDownload { get; internal set; }
 }
